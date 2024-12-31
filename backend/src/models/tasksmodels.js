@@ -7,12 +7,13 @@ const getAll = async()=>{
 }
 
 const addTask = async (task)=>{
-    const {titulo,descricao} = task
+    const {titulo,descricao,dt_final} = task
 
-    const dataUTC = new Date(Date.now()).toUTCString()
+    const dataUTC = new Date().toISOString().split('T')[0];
+    const prazoFinal = dt_final ||  new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]; 
 
     const [createdTask] = await connection.execute
-    ('INSERT INTO tasks(titulo, status,dt_criacao,descricao)VALUES (?,?,?,?)',[titulo,'pendente',dataUTC,descricao])
+    ('INSERT INTO tasks(titulo, status,dt_criacao,descricao,dt_final)VALUES (?,?,?,?,?)',[titulo,'pendente',dataUTC,descricao,prazoFinal])
     return {insertId: createdTask.insertId}
 }
 
