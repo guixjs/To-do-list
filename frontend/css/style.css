@@ -5,12 +5,13 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    color: white;
+    color: black;
 }
 
 body{
     background-color: #30132E;
 }
+
 .header{
     display: flex;
     justify-content: flex-end;
@@ -19,24 +20,93 @@ body{
 .addTask{
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
+}
+
+.nameInput {
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    width: 300px;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #210233;
+    border-radius: 13px;
+
+}
+.allCards{
+    height: 400px;
+    width: 70%;
+    overflow-y: auto; 
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Espaço entre os cards */
+    padding: 16px; /* Espaço interno */
 }
 .sectionMain{
     display: flex;
-    width: 90%;
+    width: 80%;
     background-color: #3E0752;
     align-items: center;
     justify-content: center;
     margin: auto;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    height: auto;
     
+}
+.sort{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
 }
 
 .card{
     display: flex;
-    background-color: #D9D9D9;
-    width: 80%;
-    border-radius: 13px;
-
+    background-color:#2B2B2B;
+    color: white;
+    justify-content: space-between;
+    border-radius: 7px;
+    border: solid white 2px;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    height: 80px;
+}
+.infosTask{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: auto;
+}
+.infosTask h3, 
+.infosTask p {
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.card h3{}
+.cardFunctions{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2px;
+}
+.statusTask{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: yellow;
+    margin: auto;
+    border-radius: 5px;
+    padding: 6px;
+}
