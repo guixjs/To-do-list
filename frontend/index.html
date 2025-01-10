@@ -19,13 +19,17 @@
     </header>
     <main>
         <div class="addTask">
+
             <!-- input name para adicionar task sem desc ou prazo -->
             <form class="newSimple">
-                <input type="text" name="name" class="nameInput" placeholder="Adicionar nova tarefa" autocomplete="of">
-                <button type="submit" class="butonSimple btnAddTask">+</button>
+                <div class="inputNewTask">
+                    <input type="text" name="name" class="nameInput" placeholder=" Adicionar nova tarefa" autocomplete="of">
+                    <button type="submit" class="buttonSimple btnAddTask">+</button>
+                </div>
             </form>
+
             <!-- modal para adicionar task com desc e prazo-->
-            <button class="buttonModal" data-modal="modal-1">Nova Tarefa</button>
+            <button class="buttonModal btnNewTask" data-modal="modal-1">Nova Tarefa</button>
                 <dialog id="modal-1">
                     <button class="closeModal" data-modal="modal-1">X</button>
                     <form class="newTaskComplete">
@@ -35,23 +39,24 @@
                 </dialog>
             </div>
         <section class="sectionMain">
-
-            <!-- Parte para filtrar e organizar os cards -->
+            
+            <!-- div com a parte principal -->
             <div class="main">
+                <!-- Parte para filtrar e organizar os cards -->
                 <div class="sort">
                     <div class="buscaTask">
                         <input type="text" name="titulo" id="buscarTask" placeholder="Digite o titulo da tarefa">
                         <span class="material-symbols-outlined">search</span>
                     </div>
-                    <button type="button">Adicionadas recentemente</button>
-                    <button type="submit" class="sortTasks">A-Z</button>
+                    <button type="button" class="sortTasks btnSort">Adicionadas recentemente</button>
+                    <button type="submit" class="sortTasks btnSort">A-Z</button>
                     <select class="statusSelect sortTasks">
                         <option value="pendente">pendente</option>
                         <option value="em andamento">em andamento</option>
                         <option value="concluida">concluida</option>
                         <option value="atrasada">atrasada</option>
                     </select>
-                    <button type="button">Proximas entregas</button>
+                    <button type="button" class="sortTasks btnSort">Proximas entregas</button>
                 </div>
 
             <!-- div com todos os cards -->
@@ -64,17 +69,16 @@
                     </div>
                     <p class="statusTask">Pendente</p>
                     <div class="cardFunctions">
-                        <button class="buttonModal infoTask" data-modal="modal-2"><span class="material-symbols-outlined">info</span></button>
+                        <button class="buttonModal actionTask btnInfo" data-modal="modal-2"><span class="material-symbols-outlined">info</span></button>
                             <!-- MODAL INFO, informações detalhadas da tarefa -->
                             <dialog id="modal-2">
                                 <button class="closeModal" data-modal="modal-2">X</button>
                                 <h1>teste2</h1>
                             </dialog>
-                        <button class="deleteTask"><span class="material-symbols-outlined">delete</span></button>
-                        <button class="done"><span class="material-symbols-outlined">check</span></button>
+                        <button class="actionTask btnDelete"><span class="material-symbols-outlined">delete</span></button>
+                        <button class="actionTask btnDone"><span class="material-symbols-outlined">check</span></button>
                         </div>
                     </div>
-                    <!-- ORIGINAL^ -->
                 <!-- FIM CARD -->
                 </div>
             </div>
