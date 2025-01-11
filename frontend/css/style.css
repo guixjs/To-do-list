@@ -59,7 +59,7 @@ body{
 .btnNewTask{
     background-color: white;
     padding: 10px;
-    border-radius: 30px;
+    border-radius: 50px;
     border: none;
     cursor: pointer;
 }
@@ -89,6 +89,7 @@ body{
     width: 200px;
     padding: 8px;
     margin: auto;
+    border-radius: 5px;
 
 }
 .buscaTask span{
@@ -147,10 +148,11 @@ body{
     width: 75%;
     overflow-y: auto; 
     overflow-x: hidden;
-    display: flex;
     flex-direction: column;
     gap: 16px;
     padding: 16px;
+    box-sizing: border-box;
+    column-gap: 10px;
 }
 
 
@@ -167,6 +169,7 @@ body{
     overflow: hidden;
     height: 100px;
     flex-wrap: wrap;
+    margin: 10px 30px 20px 0px;
 }
 .infosTask{
     display: flex;
@@ -198,3 +201,20 @@ body{
     border-radius: 5px;
     padding: 6px;
 }
+
+::-webkit-scrollbar {
+    width: 10px
+}
+::-webkit-scrollbar-track {
+    border: solid #2B2B2B; 
+    border-radius: 10px;
+  }
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: #5f0e7d; 
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #b30000; 
+}
+
