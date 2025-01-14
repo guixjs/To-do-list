@@ -29,9 +29,9 @@
             </form>
 
             <!-- modal para adicionar task com desc e prazo-->
-            <button class="buttonModal btnNewTask" data-modal="modal-1">Nova Tarefa</button>
-                <dialog id="modal-1">
-                    <button class="closeModal" data-modal="modal-1">X</button>
+            <button class="buttonModal btnNewTask" data-modal="modal-0">Nova Tarefa</button>
+                <dialog id="modal-0" class="modalContent">
+                    <button class="closeModal" data-modal="modal-0">X</button>
                     <form class="newTaskComplete">
                         <input type="date" name="dataFinal">
                     </form>
@@ -70,15 +70,37 @@
                     <p class="statusTask">Pendente</p>
                     <div class="cardFunctions">
                         <button class="buttonModal actionTask btnInfo" data-modal="modal-2"><span class="material-symbols-outlined">info</span></button>
-                            <!-- MODAL INFO, informações detalhadas da tarefa -->
-                            <dialog id="modal-2">
+
+
+                        <dialog class="modalContent" id="modal-2">
+                            <div class="dialogHeader">
+                                <h3 class="tituloTask">Atividade química</h3>
+                                <p class="statusTask">Pendente</p>
                                 <button class="closeModal" data-modal="modal-2">X</button>
-                                <h1>teste2</h1>
-                            </dialog>
+                            </div>
+                            <div class="dialogMain">
+                                <div class="dialogDesc">
+                                    <p class="descTitle">Descrição:</p>
+                                    <p class="desc">AAAAAAAAAAAAAAAAAAAAAAAAA</p>
+                                </div>
+                                <div class="dialogDates">
+                                    <div class="dtCriada"></div>
+                                    <div class="dtFinal"></div>
+                                </div>
+                                <div class="dialogFooter">
+                                    <div class="actions"></div>
+                                    <button class="actionTask btnDelete"><span class="material-symbols-outlined">delete</span></button>
+                                    <button class="actionTask btnDelete"><span class="material-symbols-outlined">edit_note</span></button>
+                                </div>
+                            </div>
+                        </dialog>
+
+
                         <button class="actionTask btnDelete"><span class="material-symbols-outlined">delete</span></button>
                         <button class="actionTask btnDone"><span class="material-symbols-outlined">check</span></button>
                         </div>
                     </div>
+                    
                 <!-- FIM CARD -->
                 </div>
             </div>

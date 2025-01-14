@@ -218,3 +218,28 @@ body{
     background: #b30000; 
 }
 
+
+/* ESTOU APANHANDO PARA ESTILIZAR ISSO */
+dialog::backdrop{
+    background-color: rgba(0 ,0, 0, 0.7);  
+}
+
+dialog[open]{
+    display: flex;
+    animation: aparecer 0.3s ease;
+}
+dialog {
+    display: none; /* Este estilo é essencial */
+}
+
+@keyframes aparecer {
+    from{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to{
+        opacity: 1;
+        transform: scale(1);
+    }
+    
+}

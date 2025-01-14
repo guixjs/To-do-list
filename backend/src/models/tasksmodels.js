@@ -10,10 +10,13 @@ const addTask = async (task)=>{
     const {titulo,descricao,dt_final} = task
 
     const dataUTC = new Date().toISOString().split('T')[0];
-    const prazoFinal = dt_final ||  new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]; 
+    const prazoFinal = dt_final || null
+    // FOMRATO PARA DATA DEFAULT DE 7 DIAS
+    // new Date(Date.now() + 7 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]
+    const desc = descricao || 'Tarefa sem descrição'
 
     const [createdTask] = await connection.execute
-    ('INSERT INTO tasks(titulo, status,dt_criacao,descricao,dt_final)VALUES (?,?,?,?,?)',[titulo,'pendente',dataUTC,descricao,prazoFinal])
+    ('INSERT INTO tasks(titulo, status,dt_criacao,descricao,dt_final)VALUES (?,?,?,?,?)',[titulo,'pendente',dataUTC,desc,prazoFinal])
     return {insertId: createdTask.insertId}
 }
 
